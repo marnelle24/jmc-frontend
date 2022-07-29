@@ -96,6 +96,11 @@ const routes = [
         name: 'Single Category Page',
         component: () => import('src/pages/Category/SingleCategory')
       },
+      {
+        path: 'inventory',
+        name: 'Inventory Page',
+        component: () => import('src/pages/Transaction/InventoryList')
+      },
     ]
   },
 

@@ -6,6 +6,20 @@
         <i class="nc-icon nc-chart-pie-35"></i>
         <p>Dashboard</p>
       </sidebar-link>
+
+      <sidebar-link to="/products">
+        <i class="nc-icon nc-grid-45"></i>
+        <p>Products</p>
+      </sidebar-link>
+      <sidebar-link to="/categories">
+        <i class="nc-icon nc-grid-45"></i>
+        <p>Categories</p>
+      </sidebar-link>
+      <sidebar-link to="/inventory">
+        <i class="nc-icon nc-grid-45"></i>
+        <p>Inventory</p>
+      </sidebar-link>
+
       <sidebar-link to="/user">
         <i class="nc-icon nc-circle-09"></i>
         <p>User Profile</p>
@@ -29,15 +43,6 @@
       <sidebar-link to="/notifications">
         <i class="nc-icon nc-bell-55"></i>
         <p>Notifications</p>
-      </sidebar-link>
-
-      <sidebar-link to="/products">
-        <i class="nc-icon nc-grid-45"></i>
-        <p>Products</p>
-      </sidebar-link>
-      <sidebar-link to="/categories">
-        <i class="nc-icon nc-grid-45"></i>
-        <p>Categories</p>
       </sidebar-link>
 
     </side-bar>
