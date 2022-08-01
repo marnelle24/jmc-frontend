@@ -10,11 +10,10 @@ const api = axios.create({
 api.defaults.withCredentials = true;
 
 api.interceptors.response.use(null,(error) => {
-
-    if(error.response.status === 401) {
-        store.dispatch('user/logout');
-        router.push('login');
-        // store.state.user.isExpiredAuth = true;
+    if(error.response.status == 401 || error.response.status == 0 ) {
+      store.dispatch('user/logout');
+      router.push('login');
+      store.state.user.isExpiredAuth = true;
     }
     return Promise.reject(error);
 

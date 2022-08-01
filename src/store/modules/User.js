@@ -24,11 +24,11 @@ export default {
         currentUser(state) {
             return state.currentUser
         },
-    
+
         isLoggedIn(state) {
             return state.isLoggedIn
         },
-    
+
         authError(state) {
             return state.auth_error
         },
@@ -39,7 +39,6 @@ export default {
 
     actions: {
         async login({commit}, payload) {
-        
             await User.login(payload)
                 .then(response => {
                     commit('LOGIN_SUCCESS', response.data)
@@ -48,7 +47,7 @@ export default {
                     commit('LOGIN_FAILED', error.response)
                 })
         },
-    
+
         logout({commit}) {
             User.logout()
                 .then(() => {
@@ -56,29 +55,28 @@ export default {
                     router.push('/');
                 });
         },
-    
-        getUsers({commit}) {
 
+        getUsers({commit}) {
             return User.get()
                 .then((response) => {
                     commit('USERS', response.data)
                 })
                 .catch((error) => {
                     commit('HANDLE_ERROR', error.response)
-                })            
+                })
         },
-    
+
     },
 
     mutations: {
         HANDLE_VALIDATION(state, payload) {
             state.handleValidation = payload.data.errors;
         },
-    
+
         HANDLE_ERROR(state, payload) {
             state.handleError = payload;
         },
-    
+
         LOGIN_SUCCESS(state, payload) {
             state.isLoading = false
             state.isLoggedIn = true
@@ -86,28 +84,28 @@ export default {
             localStorage.setItem("user", JSON.stringify(state.currentUser))
             state.auth_error = []
         },
-        
+
         LOGIN_FAILED(state, payload) {
             state.isLoading = false
             state.isLoggedIn = false
             state.auth_error = []
             if(payload.status === 422) {
                 state.auth_error = payload.data.errors
-            } 
+            }
             else if(payload.status === 419) {
                 state.auth_error = {
                         'noToken': payload.data.message
                     }
             }
         },
-        
+
         LOGOUT(state) {
             state.isLoading = false
             state.isLoggedIn = false
             state.auth_error = []
             state.currentUser = null
         },
-    
+
         USERS(state, usersData) {
             state.users = usersData;
         },

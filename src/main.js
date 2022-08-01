@@ -13,21 +13,12 @@ import VueToast from 'vue-toast-notification';
 
 import { initialize } from './init';
 import './registerServiceWorker'
+import store from "./store";
 
-// importing Vuex
-import Vuex from 'vuex'
-
-// plugin setup
-Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(LightBootstrap)
 Vue.use(VueToast)
 // load Store
-import storeData from "./store";
-
-const store = new Vuex.Store(
-  storeData
-);
 
 // configure router
 const router = new VueRouter({

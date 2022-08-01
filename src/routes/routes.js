@@ -97,9 +97,18 @@ const routes = [
         component: () => import('src/pages/Category/SingleCategory')
       },
       {
-        path: 'inventory',
-        name: 'Inventory Page',
-        component: () => import('src/pages/Transaction/InventoryList')
+        path: 'transactions',
+        name: 'All transactions Page',
+        component: () => import('src/pages/Transaction/List')
+      },
+      // {
+      //   path: 'transaction',
+      //   redirect: 'transaction/inventory',
+      // },
+      {
+        path: 'transaction/new',
+        name: 'Create New Transaction Page',
+        component: () => import('src/pages/Transaction/New')
       },
     ]
   },

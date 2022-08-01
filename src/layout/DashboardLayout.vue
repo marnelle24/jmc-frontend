@@ -15,9 +15,9 @@
         <i class="nc-icon nc-grid-45"></i>
         <p>Categories</p>
       </sidebar-link>
-      <sidebar-link to="/inventory">
+      <sidebar-link to="/transactions">
         <i class="nc-icon nc-grid-45"></i>
-        <p>Inventory</p>
+        <p>Transactions</p>
       </sidebar-link>
 
       <sidebar-link to="/user">
